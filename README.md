@@ -13,7 +13,8 @@
 
 <code>~/.config/nvim</code>
 
-<p>You need to create a folder to salve plugins package. The folder needs is in directory: <code>~/.config/nvim/vim-plug/plugged</code></p>
+<p>You need to create a folder to salve plugins package. The folder needs is in directory: 
+ <code>~/.config/nvim/vim-plug/plugged</code></p>
 
 ### Windows
 
@@ -21,6 +22,7 @@
 
 <code>~/AppData/Local/nvim</code>
 
-<p>You need to create a folder to salve plugins package. The folder needs is in directory: <code>~/AppData/Local/vim-plug/plugged</code></p>
+<p>You need to create a folder to salve plugins package. The folder needs is in directory: 
+ <code>~/AppData/Local/vim-plug/plugged</code></p>
 
 <p>After this, open your NeoVim and execute the command <n><code>:PlugInstall</code></n>, if you not have <a href="https://github.com/junegunn/vim-plug" target="_blank">vim-plug</a> this been a error.</p>
