@@ -1,0 +1,8 @@
+# Images
+*.git
+*.png
+*.jpg
+*.jpeg
+
+#Plugs
+vim-plug/
