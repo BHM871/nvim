@@ -27,4 +27,4 @@
 
  <p></p>
 
-<p>After this, open your NeoVim and execute the command <n><code>:PlugInstall</code></n>, if you not have <a href="https://github.com/junegunn/vim-plug" target="_blank">vim-plug</a> this been a error.</p>
+<p>After this, open your NeoVim and execute the command <n><code>:PlugInstall</code></n>, if you don't have <a href="https://github.com/junegunn/vim-plug" target="_blank">vim-plug</a> this will give an error.</p>
