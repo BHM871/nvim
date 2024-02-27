@@ -41,4 +41,5 @@ vim.o.incsearch = true
 vim.opt.scrolloff = 10
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.o.mouse = ""
 

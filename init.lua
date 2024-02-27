@@ -20,10 +20,11 @@ vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/
 
 		-- Configurações de servidores de linguagens
 	Plug 'williamboman/mason-lspconfig.nvim'
-	Plug 'jose-elias-alvarez/null-ls.nvim'
-	Plug 'natebosch/vim-lsc'
+	Plug 'neovim/nvim-lspconfig'
 	Plug 'mfussenegger/nvim-dap'
 	Plug 'rcarriga/nvim-dap-ui'
+	Plug 'jose-elias-alvarez/null-ls.nvim'
+	Plug 'mhartington/formatter.nvim'
 	Plug 'natebosch/vim-lsc'
 
 		-- Tema
@@ -41,7 +42,6 @@ vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/
 	Plug 'thosakwe/vim-flutter'
 
 		-- Java Config
-	Plug 'simaxme/java.nvim'
 
 		-- Git Config
 	Plug 'tanvirtin/vgit.nvim'
