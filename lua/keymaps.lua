@@ -4,17 +4,10 @@ local keymap = vim.api.nvim_set_keymap
 			-- Meus mapeamentos
 
 		-- Normal Mode
-	
-	-- DAP Config
-keymap("n", "<F5>", ":DapContinue<CR>", opts)
-keymap("n", "<F29>", ":DapTerminate<CR>", opts)
-keymap("n", "<F17>", ":DapToggleRepl<CR>", opts)
-keymap("n", "<F9>", ":DapToggleBreakpoint<CR>", opts)
-keymap("n", "<F10>", ":DapStepOver<CR>", opts)
-keymap("n", "<F11>", ":DapStepInto<CR>", opts)
 
 	-- Atalhos para Plugins
 keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
+keymap("n", "<C-f>", ":NERDTreeFind<CR>", opts)
 keymap("n", "<C-p>", ":PlugInstall<CR>", opts)
 
   -- Atalhos funcionais

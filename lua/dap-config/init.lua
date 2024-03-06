@@ -1,6 +1,15 @@
 require("dapui").setup()
 
 local dap, dapui = require("dap"), require("dapui")
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<F5>", ":DapContinue<CR>", opts)
+keymap("n", "<F29>", ":DapTerminate<CR>", opts)
+keymap("n", "<F17>", ":DapToggleRepl<CR>", opts)
+keymap("n", "<F9>", ":DapToggleBreakpoint<CR>", opts)
+keymap("n", "<F10>", ":DapStepOver<CR>", opts)
+keymap("n", "<F11>", ":DapStepInto<CR>", opts)
 
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
@@ -15,47 +24,5 @@ dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
 
-dap.adapters = {
-  dart = {
-    type = "executable",
-    command = "flutter",
-    args = {"debug_adapter"}
-  },
-  cppdbg = {
-    id = 'cppdbg',
-    type = 'executable',
-    command = '/home/adrian/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
-  }
-}
-
-dap.configurations = {
-  dart = {
-    {
-      type = "dart",
-      request = "launch",
-      name = "Launch Flutter Program",
-      program = "${file}",
-      cwd = "${workspaceFolder}",
-    }
-  },
-  cpp = {
-    {
-      name = "Launch file",
-      type = "cppdbg",
-      request = "launch",
-      program = "${file}", 
-      cwd = '${workspaceFolder}',
-      stopAtEntry = true,
-    },
-    {
-      name = 'Attach to gdbserver :1234',
-      type = 'cppdbg',
-      request = 'launch',
-      MIMode = 'gdb',
-      miDebuggerServerAddress = 'localhost:1234',
-      miDebuggerPath = '/usr/bin/gdb',
-      cwd = '${workspaceFolder}',
-      program = "${file}"
-    },
-  }
-}
+require('dap-config.adapters')
+require('dap-config.configurations')
