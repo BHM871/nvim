@@ -41,8 +41,6 @@ vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/
 	Plug 'dart-lang/dart-vim-plugin'
 	Plug 'thosakwe/vim-flutter'
 
-		-- Java Config
-
 		-- Git Config
 	Plug 'tanvirtin/vgit.nvim'
 

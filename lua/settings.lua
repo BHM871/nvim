@@ -29,6 +29,7 @@ vim.opt.shiftwidth = tab_width
 vim.o.autowriteall = true
 vim.o.autowrite = true
 vim.o.autoread = true
+vim.o.autoload = true
 
 -- Identação
 vim.opt.autoindent = true

@@ -1,28 +1,40 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
-local remap = vim.keymap.set
 
 			-- Meus mapeamentos
 
 		-- Normal Mode
+	
+	-- DAP Config
+keymap("n", "<F5>", ":DapContinue<CR>", opts)
+keymap("n", "<F29>", ":DapTerminate<CR>", opts)
+keymap("n", "<F17>", ":DapToggleRepl<CR>", opts)
+keymap("n", "<F9>", ":DapToggleBreakpoint<CR>", opts)
+keymap("n", "<F10>", ":DapStepOver<CR>", opts)
+keymap("n", "<F11>", ":DapStepInto<CR>", opts)
 
 	-- Atalhos para Plugins
 keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
 keymap("n", "<C-p>", ":PlugInstall<CR>", opts)
 
   -- Atalhos funcionais
-keymap("n", "<S-t>", "<C-w><C-s><C-w><C-j>:res -12<CR>:terminal<CR>", opts)
+keymap("n", "<S-t>", "<C-w>s<C-w>j:res -12<CR>:terminal<CR>", opts)
 keymap("n", "<A-o>", ":only<CR>", opts)
 
+-- Salvar e fechar buffers
 keymap("n", "<C-s>", ":wa<CR>", opts)
-remap("n", "<S-h>", ":tabn<CR>", opts)
-remap("n", "<S-l>", ":tabp<CR>", opts)
-remap("n", "<S-e>", ":tabc<CR>", opts)
+keymap("n", "<C-w><C-q>", ":bdelete<CR>:NERDTreeFocus<CR><C-w>h", opts)
 
-remap("n", "<C-h>", "<C-w>h", opts)
-remap("n", "<C-j>", "<C-w>j", opts)
-remap("n", "<C-k>", "<C-w>k", opts)
-remap("n", "<C-l>", "<C-w>l", opts)
+-- Navegacoes entre Tabs
+keymap("n", "<S-h>", ":tabp<CR>", opts)
+keymap("n", "<S-l>", ":tabn<CR>", opts)
+keymap("n", "<S-e>", ":tabc<CR>", opts)
+
+-- Navegacoes entre telas
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 	-- Resize com setas
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
