@@ -8,7 +8,6 @@ local keymap = vim.api.nvim_set_keymap
 ------ Atalhos para Plugins
 keymap("n", "<A-1>", ":NERDTreeToggle<CR>", opts)
 keymap("n", "<C-f>", ":NERDTreeFind<CR>", opts)
-keymap("n", "<C-p>", ":PlugInstall<CR>", opts)
 
 -------- Atalhos funcionais
 keymap("n", "<F60>", "<C-w>s<C-w>j:res -12<CR>:terminal<CR>", opts)

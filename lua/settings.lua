@@ -8,7 +8,6 @@ vim.wo.relativenumber = true
 ---- Text and Font
 vim.o.wrap = false
 vim.opt.encoding = "utf-8"
-vim.o.guifont = "JetBrains Mono"
 
 ---- Airline
 vim.g.airline_powerline_fonts = 2

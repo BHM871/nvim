@@ -1,9 +1,10 @@
-
+require("config.lazy")
 require("keymaps")
 require("settings")
+require("plugins")
 
 --	-- Instalação Pluigns
-vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/vim-plug/plugged')
+--vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/vim-plug/plugged')
 
 		-- Barra lateral com diretórios
 --	Plug ('preservim/nerdtree', { ['on'] = 'NERDTreeToggle' })
@@ -45,7 +46,7 @@ vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/
 --		-- Git Config
 --	Plug 'tanvirtin/vgit.nvim'
 
-vim.call('plug#end')
+--vim.call('plug#end')
 
 	-- Configurações Pluigns
 --require("mason-config")
