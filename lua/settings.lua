@@ -1,42 +1,43 @@
-	-- Tema
-vim.cmd [[colorscheme sonokai]]
+-- Tema
+-- vim.cmd [[colorscheme sonokai]]
 vim.opt.termguicolors = true
 
 vim.wo.number = true
 vim.wo.relativenumber = true
 
--- Text and Font
+---- Text and Font
 vim.o.wrap = false
 vim.opt.encoding = "utf-8"
 vim.o.guifont = "JetBrains Mono"
 
---Airline
+---- Airline
 vim.g.airline_powerline_fonts = 2
 vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#left_sep"] = ' '
 vim.g["airline#extensions#tabline#left_alt_sep"] = '|'
 vim.g["airline#extensions#tabline#formatter"] = 'default'
 
-	-- Funcionais
+-- Funcionais
 
--- <Tab> Config
-local tab_width = 2
+---- <Tab> Config
+local tab_width = 4
 vim.opt.tabstop = tab_width
 vim.opt.softtabstop = tab_width
 vim.opt.shiftwidth = tab_width
+vim.opt.expandtab = true
 
--- Salvar e Atualizar
+---- Salvar e Atualizar
 vim.o.autowriteall = true
 vim.o.autowrite = true
 vim.o.autoread = true
-vim.o.autoload = true
+-- vim.o.autoload = true
 
--- Identação
+---- Identação
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.breakindent = true
 
--- Outros
+---- Outros
 vim.o.hidden = true
 vim.o.incsearch = true
 vim.opt.scrolloff = 10
