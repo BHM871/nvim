@@ -6,7 +6,7 @@ local keymap = vim.api.nvim_set_keymap
 ---- Normal Mode
 
 -------- Atalhos funcionais
-keymap("n", "<F60>", "<C-w>s<C-w>j:res -12<CR>:terminal<CR><Insert>", opts)
+keymap("n", "<F60>", "<C-w>s<C-w>j:res -10<CR>:terminal<CR><Insert>", opts)
 keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
@@ -25,8 +25,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 ------ Resize com setas
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<A-Up>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-Down>", ":vertical resize +2<CR>", opts)
 
 ---- Insert Mode
 
