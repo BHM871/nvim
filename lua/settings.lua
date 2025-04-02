@@ -1,12 +1,9 @@
--- Tema
--- vim.cmd [[colorscheme sonokai]]
-vim.opt.termguicolors = true
-
 vim.wo.number = true
 vim.wo.relativenumber = true
 
 ---- Text and Font
 vim.o.wrap = false
+vim.opt.guifont = "JetBrainsMono"
 vim.opt.encoding = "utf-8"
 
 ---- Airline
