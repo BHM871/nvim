@@ -5,17 +5,13 @@ local keymap = vim.api.nvim_set_keymap
 
 ---- Normal Mode
 
------- Atalhos para Plugins
-keymap("n", "<A-1>", ":NERDTreeToggle<CR>", opts)
-keymap("n", "<C-f>", ":NERDTreeFind<CR>", opts)
-
 -------- Atalhos funcionais
 keymap("n", "<F60>", "<C-w>s<C-w>j:res -12<CR>:terminal<CR>", opts)
 keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
 keymap("n", "<C-s>", ":wa<CR>", opts)
-keymap("n", "<C-w><C-q>", ":bdelete<CR>:NERDTreeFocus<CR><C-w>h", opts)
+keymap("n", "<C-w><C-q>", ":bdelete<CR>:NvimTreeOpen<CR><C-w>h", opts)
 
 -------- Navegacoes entre Tabs
 keymap("n", "<S-h>", ":tabp<CR>", opts)
