@@ -4,5 +4,5 @@
 *.jpg
 *.jpeg
 
-#Plugs
-vim-plug/
+# Plugs
+lazy-lock.json
