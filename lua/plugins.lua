@@ -1,7 +1,4 @@
-require("lazy").setup({
-    { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Theme
-})
-
+return {}
 --	-- Instalação Pluigns
 --vim.call('plug#begin', '~/.config/nvim/vim-plug/plugged', '~/AppData/Local/nvim/vim-plug/plugged')
 
