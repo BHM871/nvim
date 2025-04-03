@@ -24,11 +24,10 @@ return {
         })
 
         local api = require("nvim-tree.api")
-        local opts = { noremap = true, silent = true }
-        local keymap = vim.api.nvim_set_keymap
+        local opts = { noremap = true, silent = true, nowait = true }
+        local keymap = vim.keymap.set
 
         keymap("n", "<A-1>", ":NvimTreeToggle<CR>", opts)
-        keymap("n", "<C-f>", ":NvimTreeFindFile<CR>", opts)
-        vim.keymap.set("n", "?", api.tree.toggle_help, opts)
+        keymap("n", "?", api.tree.toggle_help, opts)
     end
 }
