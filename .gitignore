@@ -3,6 +3,3 @@
 *.png
 *.jpg
 *.jpeg
-
-# Plugs
-*lazy-lock.json*
