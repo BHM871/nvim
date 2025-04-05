@@ -33,6 +33,11 @@ keymap("n", "<A-Down>", ":vertical resize +2<CR>", opts)
 ------ Atalhos funcionais
 keymap("i", "<A-o>", ":only<CR>", opts)
 
+---- Visual Line Mode
+
+------ Atalhos funcionais
+keymap("x", "<Tab>", ">><Normal>", opts)
+
 ---- Terminal Mode
 
 ------ Atalhos funcionais
