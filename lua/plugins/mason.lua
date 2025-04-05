@@ -26,33 +26,49 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            lspconfig.lua_ls.setup({})
-            lspconfig.clangd.setup({})
-            lspconfig.dockerls.setup({})
-            lspconfig.jdtls.setup({})
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.dockerls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.jdtls.setup({
+                capabilities = capabilities,
+            })
 
-            lspconfig.ts_ls.setup({})
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+            })
             lspconfig.html.setup({
+                capabilities = capabilities,
                 filetypes = {
                     "html",
                     "templ",
                     "jsp",
                 },
             })
-            lspconfig.cssls.setup({})
+            lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
 
-            lspconfig.ast_grep.setup({})
+            lspconfig.ast_grep.setup({
+                capabilities = capabilities,
+            })
 
             local opts = { noremap = true, silent = true, nowait = true }
             local keymap = vim.keymap.set
 
-            keymap("n", "<C-space>", vim.lsp.buf.hover, opts)
+            keymap("n", "<A-CR>", vim.lsp.buf.hover, opts)
             keymap("n", "<gd>", vim.lsp.buf.declaration, opts)
             keymap("n", "<gi>", vim.lsp.buf.implementation, opts)
             keymap("n", "<A-l>", vim.lsp.buf.format, opts)
 
-            keymap("i", "<C-space>", vim.lsp.buf.code_action, opts)
+            keymap("i", "<A-CR>", vim.lsp.buf.code_action, opts)
         end,
     }
 }
