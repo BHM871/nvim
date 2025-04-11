@@ -12,10 +12,10 @@ return {
             local opts = { noremap = true, silent = true, nowait = true }
             local keymap = vim.keymap.set
 
-            keymap("n", "<S-g>", builtin.live_grep, opts)
+            keymap("n", "<S-g>", builtin.git_status, opts)
             keymap("n", "<S-b>", builtin.buffers, opts)
             keymap("n", "<S-h>", builtin.help_tags, opts)
-            keymap("n", "<S-f>", ":Telescope find_files<CR>", opts)
+            keymap("n", "<S-f>", builtin.find_files, opts)
         end
     },
     {

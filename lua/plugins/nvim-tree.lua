@@ -27,7 +27,7 @@ return {
         local opts = { noremap = true, silent = true, nowait = true }
         local keymap = vim.keymap.set
 
-        keymap("n", "<A-1>", ":NvimTreeToggle<CR>", opts)
+        keymap("n", "<A-1>", ":NvimTreeFocus<CR>", opts)
         keymap("n", "?", api.tree.toggle_help, opts)
     end
 }
