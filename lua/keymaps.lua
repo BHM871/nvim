@@ -32,17 +32,19 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 ------ Atalhos funcionais
 keymap("i", "<A-o>", ":only<CR>", opts)
+keymap("i", "<S-Tab>", "<ESC><<<Insert>", opts)
 
 ---- Visual Line Mode
 
 ------ Atalhos funcionais
 keymap("x", "<Tab>", ">><Normal>", opts)
+keymap("x", "<S-Tab>", "<<<Normal>", opts)
 
 ---- Terminal Mode
 
 ------ Atalhos funcionais
 keymap("t", "<ESC>", "<C-\\><C-n>", opts)
-keymap("t", "<F60>", "<C-\\><C-n>:q<CR>", opts)
+keymap("t", "<F60>", "<C-\\><C-n>:bd!<CR>", opts)
 
 keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
 keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
