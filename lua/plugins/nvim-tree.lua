@@ -35,6 +35,5 @@ return {
         end
 
         keymap("n", "<A-1>", api.tree.toggle, opts)
-        keymap("n", "?", api.tree.toggle_help, opts)
     end
 }
