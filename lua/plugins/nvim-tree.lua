@@ -18,16 +18,23 @@ return {
             renderer = {
                 group_empty = true,
             },
-            filters = {
-                dotfiles = true,
-            },
         })
 
         local api = require("nvim-tree.api")
         local opts = { noremap = true, silent = true, nowait = true }
         local keymap = vim.keymap.set
 
-        keymap("n", "<A-1>", ":NvimTreeFocus<CR>", opts)
+        api.tree.toggle = function()
+            local tree = require("nvim-tree.api").tree
+
+            if tree.is_tree_buf(nil) then
+                tree.close()
+            else
+                tree.focus()
+            end
+        end
+
+        keymap("n", "<A-1>", api.tree.toggle, opts)
         keymap("n", "?", api.tree.toggle_help, opts)
     end
 }
