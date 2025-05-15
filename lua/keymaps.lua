@@ -11,7 +11,7 @@ keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
 keymap("n", "<C-s>", ":wa<CR>", opts)
-keymap("n", "<C-w><C-q>", ":bdelete<CR>:NvimTreeOpen<CR><C-w>h", opts)
+keymap("n", "<F28>", ":bdelete<CR><A-1>", opts)
 
 -------- Navegacoes entre Tabs
 keymap("n", "<S-e>", ":tabc<CR>", opts)
