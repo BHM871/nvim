@@ -26,12 +26,17 @@ vim.opt.expandtab = true
 vim.o.autowriteall = true
 vim.o.autowrite = true
 vim.o.autoread = true
--- vim.o.autoload = true
 
 ---- Identação
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.breakindent = true
+
+---- Fold
+vim.wo.foldenable = true
+vim.wo.foldlevel = 20
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 ---- Outros
 vim.o.hidden = true
@@ -40,4 +45,3 @@ vim.opt.scrolloff = 10
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.mouse = ""
-
