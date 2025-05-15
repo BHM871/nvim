@@ -14,6 +14,8 @@ return {
 
             keymap("n", "<C-e>", builtin.buffers, opts)
             keymap("n", "<C-n>", builtin.find_files, opts)
+            keymap("n", "<C-p>", builtin.commands, opts)
+            keymap("n", "<C-f>", builtin.live_grep, opts)
         end
     },
     {
