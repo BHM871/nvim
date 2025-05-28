@@ -11,7 +11,7 @@ keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
 keymap("n", "<C-s>", ":wa<CR>", opts)
-keymap("n", "<F28>", ":bdelete<CR><A-1>", opts)
+keymap("n", "<F28>", ":bdelete<CR>:Telescope buffers<CR>", opts)
 
 -------- Navegacoes entre Tabs
 keymap("n", "<S-e>", ":tabc<CR>", opts)
@@ -43,7 +43,6 @@ keymap("x", "<S-Tab>", "<<<Normal>", opts)
 ---- Terminal Mode
 
 ------ Atalhos funcionais
-keymap("t", "<ESC>", "<C-\\><C-n>", opts)
 keymap("t", "<F60>", "<C-\\><C-n>:bd!<CR>", opts)
 
 keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)

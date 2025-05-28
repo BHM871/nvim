@@ -64,8 +64,8 @@ return {
             local keymap = vim.keymap.set
 
             keymap("n", "<A-CR>", vim.lsp.buf.hover, opts)
-            keymap("n", "gd", vim.lsp.buf.declaration, opts)
-            keymap("n", "gD", vim.lsp.buf.definition, opts)
+            keymap("n", "gD", vim.lsp.buf.declaration, opts)
+            keymap("n", "gd", vim.lsp.buf.definition, opts)
             keymap("n", "gi", vim.lsp.buf.implementation, opts)
             keymap("n", "<A-l>", vim.lsp.buf.format, opts)
 
