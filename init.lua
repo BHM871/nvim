@@ -2,6 +2,7 @@ require("config.lazy")
 
 require("keymaps")
 require("settings")
+require("handlers")
 
 require("lazy").setup("plugins")
 

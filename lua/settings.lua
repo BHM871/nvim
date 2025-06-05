@@ -16,21 +16,18 @@ vim.g["airline#extensions#tabline#formatter"] = 'default'
 -- Funcionais
 
 ---- <Tab> Config
-local tab_width = 4
-vim.opt.tabstop = tab_width
-vim.opt.softtabstop = tab_width
-vim.opt.shiftwidth = tab_width
 vim.opt.expandtab = true
-
----- Salvar e Atualizar
-vim.o.autowriteall = true
-vim.o.autowrite = true
-vim.o.autoread = true
 
 ---- Identação
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.breakindent = true
+vim.opt.list = true
+
+---- Salvar e Atualizar
+vim.o.autowriteall = true
+vim.o.autowrite = true
+vim.o.autoread = true
 
 ---- Fold
 vim.wo.foldenable = true
