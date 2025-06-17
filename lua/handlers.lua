@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "lua",
     "dart",
     "yaml",
+    "html", "xhtml",
   },
   callback = function()
     require('config.tiny-language').setup()
