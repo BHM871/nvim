@@ -6,7 +6,7 @@ local keymap = vim.keymap.set
 ---- Normal Mode
 
 -------- Atalhos funcionais
-keymap("n", "<F60>", "<C-w>s<C-w>j:res -10<CR>:terminal<CR><Insert>", opts)
+keymap("n", "<F60>", vim.api.open_terminal, opts)
 keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
