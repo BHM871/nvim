@@ -10,7 +10,7 @@ keymap("n", "<F60>", vim.api.open_terminal, opts)
 keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
-keymap("n", "<C-s>", ":wa<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "<F28>", ":bdelete<CR>:Telescope buffers<CR>", opts)
 
 -------- Navegacoes entre Tabs
