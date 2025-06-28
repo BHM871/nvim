@@ -29,20 +29,28 @@ local setup_c = function(dap)
       end,
       cwd = '${workspaceFolder}'
     },
-    {
-      name = 'Attach to gdbserver :8777',
-      type = 'gdb',
-      request = 'attach',
-      target = 'localhost:8777',
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-      end,
-      cwd = '${workspaceFolder}'
-    },
   }
 
   dap.configurations.cpp = dap.configurations.c
   dap.configurations.rust = dap.configurations.c
+end
+
+local setup_dart = function(dap)
+  dap.adapters.dart = {
+    type = "executable",
+    command = "flutter",
+    args = { "debug_adapter" }
+  }
+
+  dap.configurations.dart = {
+    {
+      type = "dart",
+      request = "launch",
+      name = "Launch Flutter Program",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+    },
+  }
 end
 
 return {
@@ -52,6 +60,7 @@ return {
       local dap = require("dap")
 
       setup_c(dap)
+      setup_dart(dap)
 
       local opts = {}
       local keymap = vim.keymap.set
