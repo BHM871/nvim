@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()
-    require('config.default').setup()
+    require('core.default').setup()
   end
 });
 
@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "html", "xhtml",
   },
   callback = function()
-    require('config.tiny-language').setup()
+    require('core.tiny-language').setup()
   end
 });
 

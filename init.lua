@@ -1,10 +1,8 @@
-require("config.lazy")
+require("config.handlers")
+require("config.keymaps")
+require("config.settings")
 
-require("handlers")
-require("keymaps")
-require("settings")
-
-require("lazy").setup("plugins")
+require("core.lazy")
 
 	-- Configurações Pluigns
 --require("mason-config")

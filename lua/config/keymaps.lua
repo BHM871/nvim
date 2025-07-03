@@ -11,7 +11,7 @@ keymap("n", "<A-o>", ":only<CR>", opts)
 
 -------- Salvar e fechar buffers
 keymap("n", "<C-s>", ":w<CR>", opts)
-keymap("n", "<F28>", ":bdelete<CR>:Telescope buffers<CR>", opts)
+keymap("n", "<F28>", ":bdelete<CR>", opts)
 
 -------- Navegacoes entre Tabs
 keymap("n", "<S-e>", ":tabc<CR>", opts)
