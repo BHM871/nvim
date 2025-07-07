@@ -1,8 +1,9 @@
 local setup_c = function(dap)
   dap.adapters.gdb = {
+    id = "gdb",
     type = "executable",
-    command = "/usr/local/bin/gdb",
-    args = { "--interpreter=dap", "--quiet", "--eval-command", "set print pretty on" }
+    command = "/usr/bin/gdb",
+    args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
   }
 
   dap.configurations.c = {
@@ -14,6 +15,7 @@ local setup_c = function(dap)
         return vim.fn.getcwd() .. '/' .. vim.fn.expand('%:t:r')
       end,
       cwd = "${workspaceFolder}",
+      stopAtEntry = true,
       stopAtBeginningOfMainSubprogram = false,
     },
     {
@@ -27,7 +29,9 @@ local setup_c = function(dap)
         local name = vim.fn.input('Executable name (filter): ')
         return require("dap.utils").pick_process({ filter = name })
       end,
-      cwd = '${workspaceFolder}'
+      cwd = '${workspaceFolder}',
+      stopAtEntry = true,
+      stopAtBeginningOfMainSubprogram = false,
     },
   }
 
@@ -65,10 +69,11 @@ return {
       local opts = {}
       local keymap = vim.keymap.set
 
+      keymap("n", "<F6>", dap.goto_, opts)
       keymap("n", "<F7>", dap.step_into, opts)
+      keymap("n", "<F32>", dap.toggle_breakpoint, opts)
       keymap("n", "<F8>", dap.step_over, opts)
       keymap("n", "<F9>", dap.continue, opts)
-      keymap("n", "<F10>", dap.toggle_breakpoint, opts)
     end,
   },
   {
