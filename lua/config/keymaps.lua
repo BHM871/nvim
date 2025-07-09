@@ -13,9 +13,6 @@ keymap("n", "<A-o>", ":only<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "<F28>", ":bdelete<CR>", opts)
 
--------- Navegacoes entre Tabs
-keymap("n", "<S-e>", ":tabc<CR>", opts)
-
 -------- Navegacoes entre telas
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -28,17 +25,14 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+------ Scrolling
+keymap("n", "<S-Up>", "<C-y>", opts)
+keymap("n", "<S-Down>", "<C-e>", opts)
+
 ---- Insert Mode
 
 ------ Atalhos funcionais
 keymap("i", "<A-o>", ":only<CR>", opts)
-keymap("i", "<S-Tab>", "<ESC><<<Insert>", opts)
-
----- Visual Line Mode
-
------- Atalhos funcionais
-keymap("x", "<Tab>", ">><Normal>", opts)
-keymap("x", "<S-Tab>", "<<<Normal>", opts)
 
 ---- Terminal Mode
 

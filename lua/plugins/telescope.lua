@@ -12,10 +12,11 @@ return {
       local opts = { noremap = true, silent = true, nowait = true }
       local keymap = vim.keymap.set
 
-      keymap("n", "<C-e>", builtin.buffers, opts)
-      keymap("n", "<C-n>", builtin.find_files, opts)
-      keymap("n", "<C-p>", builtin.commands, opts)
-      keymap("n", "<C-f>", builtin.live_grep, opts)
+      keymap("n", "<M-e>", builtin.buffers, opts)
+      keymap("n", "<M-n>", builtin.find_files, opts)
+      keymap("n", "<M-p>", builtin.commands, opts)
+      keymap("n", "<M-F>", builtin.live_grep, opts)
+      keymap("n", "<M-f>", builtin.current_buffer_fuzzy_find, opts)
     end
   },
   {
