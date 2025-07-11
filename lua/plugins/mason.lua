@@ -1,3 +1,14 @@
+local language_servers = {
+  "lua_ls",
+  "clangd",
+  "dockerls",
+  "jdtls",
+  "ts_ls",
+  "html",
+  "cssls",
+  "ast_grep",
+}
+
 return {
   {
     "williamboman/mason.nvim",
@@ -9,16 +20,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "clangd",
-          "dockerls",
-          "jdtls",
-          "ts_ls",
-          "html",
-          "cssls",
-          "ast_grep",
-        },
+        ensure_installed = language_servers,
       })
     end,
   },
@@ -28,43 +30,23 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.dockerls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.jdtls.setup({
-        capabilities = capabilities,
-      })
+      for _, language in pairs(language_servers) do
+        lspconfig[language].setup({ capabilities = capabilities })
+      end
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-      })
       lspconfig.html.setup({
-        capabilities = capabilities,
         filetypes = {
           "html",
           "templ",
+          "xhtml",
           "jsp",
         },
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities,
       })
 
       lspconfig.dartls.setup({
         dartls = {
           cmd = { "dart", "language-server", "--protocol=lsp" },
-          capabilities = capabilities,
         }
-      })
-
-      lspconfig.ast_grep.setup({
-        capabilities = capabilities,
       })
 
       local opts = { noremap = true, silent = true, nowait = true }
