@@ -1,75 +1,18 @@
-local setup_c = function(dap)
-  dap.adapters.gdb = {
-    id = "gdb",
-    type = "executable",
-    command = "/usr/bin/gdb",
-    args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
-  }
-
-  dap.configurations.c = {
-    {
-      name = "Launch",
-      type = "gdb",
-      request = "launch",
-      program = function()
-        return vim.fn.getcwd() .. '/' .. vim.fn.expand('%:t:r')
-      end,
-      cwd = "${workspaceFolder}",
-      stopAtEntry = true,
-      stopAtBeginningOfMainSubprogram = false,
-    },
-    {
-      name = "Attach",
-      type = "gdb",
-      request = "attach",
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-      end,
-      pid = function()
-        local name = vim.fn.input('Executable name (filter): ')
-        return require("dap.utils").pick_process({ filter = name })
-      end,
-      cwd = '${workspaceFolder}',
-      stopAtEntry = true,
-      stopAtBeginningOfMainSubprogram = false,
-    },
-  }
-
-  dap.configurations.cpp = dap.configurations.c
-  dap.configurations.rust = dap.configurations.c
-end
-
-local setup_dart = function(dap)
-  dap.adapters.dart = {
-    type = "executable",
-    command = "flutter",
-    args = { "debug_adapter" }
-  }
-
-  dap.configurations.dart = {
-    {
-      type = "dart",
-      request = "launch",
-      name = "Launch Flutter Program",
-      program = "${file}",
-      cwd = "${workspaceFolder}",
-    },
-  }
-end
-
 return {
   {
     "mfussenegger/nvim-dap",
     config = function()
       local dap = require("dap")
+      local config = require("config.debugging")
 
-      setup_c(dap)
-      setup_dart(dap)
+      config.c_cpp_rust.setup(dap)
+      config.java.setup(dap)
+      config.dart.setup(dap)
 
       local opts = {}
       local keymap = vim.keymap.set
 
-      keymap("n", "<F6>", dap.goto_, opts)
+      keymap("n", "<F6>", dap.step_over, opts)
       keymap("n", "<F7>", dap.step_into, opts)
       keymap("n", "<F32>", dap.toggle_breakpoint, opts)
       keymap("n", "<F8>", dap.step_over, opts)
