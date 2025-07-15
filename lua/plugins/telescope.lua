@@ -12,6 +12,7 @@ return {
       local opts = { noremap = true, silent = true, nowait = true }
       local keymap = vim.keymap.set
 
+      keymap("n", "<M-E>", builtin.oldfiles, opts)
       keymap("n", "<M-e>", builtin.buffers, opts)
       keymap("n", "<M-n>", builtin.find_files, opts)
       keymap("n", "<M-p>", builtin.commands, opts)
