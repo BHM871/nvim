@@ -12,9 +12,9 @@ return {
       local opts = {}
       local keymap = vim.keymap.set
 
-      keymap("n", "<F6>", dap.step_over, opts)
       keymap("n", "<F7>", dap.step_into, opts)
       keymap("n", "<F32>", dap.toggle_breakpoint, opts)
+      keymap("n", "<F20>", dap.step_out, opts)
       keymap("n", "<F8>", dap.step_over, opts)
       keymap("n", "<F9>", dap.continue, opts)
     end,
