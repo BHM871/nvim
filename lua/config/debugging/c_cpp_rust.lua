@@ -18,6 +18,20 @@ return {
         cwd = "${workspaceFolder}",
         stopAtEntry = true,
         stopAtBeginningOfMainSubprogram = false,
+        externalConsole = false,
+        MIMode = "gdb",
+        setupCommands = {
+          {
+            description = "Enable pretty-printing for gdb",
+            text = "-enable-pretty-printing",
+            ignoreFailures = true
+          },
+          {
+            description = "Set Disassembly Flavor to Intel",
+            text = "-gdb-set disassembly-flavor intel",
+            ignoreFailures = true
+          }
+        },
       },
       {
         name = "Attach",
@@ -33,6 +47,20 @@ return {
         cwd = '${workspaceFolder}',
         stopAtEntry = true,
         stopAtBeginningOfMainSubprogram = false,
+        externalConsole = false,
+        MIMode = "gdb",
+        setupCommands = {
+          {
+            description = "Enable pretty-printing for gdb",
+            text = "-enable-pretty-printing",
+            ignoreFailures = true
+          },
+          {
+            description = "Set Disassembly Flavor to Intel",
+            text = "-gdb-set disassembly-flavor intel",
+            ignoreFailures = true
+          }
+        },
       },
     }
 
