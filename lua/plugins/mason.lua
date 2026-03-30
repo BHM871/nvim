@@ -1,11 +1,8 @@
 local language_servers = {
   "lua_ls",
   "clangd",
-  "dockerls",
+  "docker_language_server",
   "jdtls",
-  "ts_ls",
-  "html",
-  "cssls",
   "ast_grep",
 }
 
@@ -27,23 +24,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
+      local lspconfig = vim.lsp.config
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       for _, language in pairs(language_servers) do
-        lspconfig[language].setup({ capabilities = capabilities })
+        lspconfig(language, { capabilities = capabilities })
       end
 
-      lspconfig.html.setup({
-        filetypes = {
-          "html",
-          "templ",
-          "xhtml",
-          "jsp",
-        },
-      })
-
-      lspconfig.dartls.setup({
+      lspconfig("dartls", {
         dartls = {
           cmd = { "dart", "language-server", "--protocol=lsp" },
         }
