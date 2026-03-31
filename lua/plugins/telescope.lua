@@ -1,9 +1,10 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "BurntSushi/ripgrep",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
       require("telescope").setup()
@@ -18,10 +19,15 @@ return {
       keymap("n", "<M-p>", builtin.commands, opts)
       keymap("n", "<M-F>", builtin.live_grep, opts)
       keymap("n", "<M-f>", builtin.current_buffer_fuzzy_find, opts)
+
+      require("telescope").load_extension("fzf")
     end
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
       require("telescope").setup({
         extensions = {
