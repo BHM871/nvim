@@ -3,6 +3,13 @@
 <h4 align="center">I'm using plugin manager <a href="https://github.com/junegunn/vim-plug" target="_blank">Lazy</a>, so, if you want to use my settings, you need install this plugin manage</h4>
  - This repository contais all my settings</p>
 
+## Requirements
+
+<ul>
+    <li>nvim >= 0.12.0</li>
+    <li>make >= 4.4.1</li>
+</ul>
+
 ## Configurations
 
 ### Linux and MacOS
